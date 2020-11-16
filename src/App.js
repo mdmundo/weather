@@ -211,7 +211,7 @@ const App = () => {
                 className={classes.depositContext}>
                 {moonPhase.value
                   ? `Moon phase is ${moonPhase.value}.`
-                  : 'Moon Phase...'}
+                  : 'Moon phase...'}
               </Typography>
               <Typography
                 component='p'
@@ -219,7 +219,13 @@ const App = () => {
                 color='textSecondary'
                 className={classes.depositContext}>
                 {sunrise.value
-                  ? `Sunrise: ${moment(sunrise.value).fromNow()}.`
+                  ? `Sunrise ${
+                      moment(sunrise.value).diff(moment()) < 0
+                        ? 'was'
+                        : 'will be'
+                    } ${moment(sunrise.value).fromNow()}. Exactly at ${moment(
+                      sunrise.value
+                    ).format('HH:mm:ss')}.`
                   : 'Sunrise...'}
               </Typography>
               <Typography
@@ -228,7 +234,13 @@ const App = () => {
                 color='textSecondary'
                 className={classes.depositContext}>
                 {sunset.value
-                  ? `Sunset: ${moment(sunset.value).fromNow()}.`
+                  ? `Sunset ${
+                      moment(sunset.value).diff(moment()) < 0
+                        ? 'was'
+                        : 'will be'
+                    } ${moment(sunset.value).fromNow()}. Exactly at ${moment(
+                      sunset.value
+                    ).format('HH:mm:ss')}.`
                   : 'Sunset...'}
               </Typography>
             </div>
