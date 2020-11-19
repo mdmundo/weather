@@ -210,7 +210,7 @@ const App = () => {
                 color='textSecondary'
                 className={classes.depositContext}>
                 {moonPhase.value
-                  ? `Moon phase is ${moonPhase.value}.`
+                  ? `Moon phase is ${moonPhase.value.replace(/_/gi, ' ')}.`
                   : 'Moon phase...'}
               </Typography>
               <Typography
