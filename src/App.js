@@ -21,8 +21,7 @@ const Copyright = () => {
       {'Created by '}
       <Link color='inherit' href='https://github.com/mdmundo'>
         Edmundo Paulino
-      </Link>{' '}
-      {new Date().getFullYear()}
+      </Link>
       {'.'}
     </Typography>
   );
